@@ -41,7 +41,5 @@ def coco_to_df(coco_data):
     
 df = coco_to_df(coco_data)
 
-display(df.head())
+print(df.head())
 print(df.columns)
-
-print(df)
