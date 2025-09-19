@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import pandas as pd
 def get_file_extensions_from_dir(folder_path):
     """
     Renvoie les extensions des fichiers présents dans un dossier.
@@ -55,3 +55,25 @@ def get_images_without_annotations(coco_data):
     
     return images_without_ann
 
+def find_annotations_without_images(df_ann: pd.DataFrame, df_img: pd.DataFrame) -> pd.DataFrame:
+    """
+    Renvoie les annotations dont l'image associée est manquante.
+
+    Paramètres :
+        df_ann (pd.DataFrame) : dataframe contenant les annotations (colonne 'image_id')
+        df_img (pd.DataFrame) : dataframe contenant les images (colonne 'id')
+
+    Retour :
+        pd.DataFrame : sous-ensemble de df_ann contenant les annotations orphelines
+    """
+    image_ids_existants = set(df_img['id'].unique())
+    annotations_orphelines = df_ann[~df_ann['image_id'].isin(image_ids_existants)]
+    return annotations_orphelines
+
+def detect_abnormal_area(df_ann):
+    invalid_area = df_ann[df_ann['area'] <= 0]
+    return invalid_area
+
+def detect_abnormal_width_height(df_img):
+    invalid_dimensions = df_img[(df_img['width']<=0) | (df_img['height'] <=0)]
+    return invalid_dimensions
