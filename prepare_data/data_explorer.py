@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -23,6 +24,8 @@ def ann_per_img(df):
     annotations_count = df.groupby('image_id').size()
     print("Statistiques des annotations par image : ")
     print(annotations_count.describe())
+    
+
     
     
 ## --- Partie Visualisation Graphique --- ##
