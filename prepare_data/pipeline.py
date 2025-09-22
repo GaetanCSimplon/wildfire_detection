@@ -47,14 +47,14 @@ def run_diagnostic(coco_json_path, image_dir):
 
 if __name__ == "__main__":
     # Exemple d’appel
-    coco_json_path = "/home/getget/wildfire_detection/data/_annotations.coco.json"
-    image_dir = "/home/getget/wildfire_detection/data"
+    coco_json_path = "/home/gaetansimplon/wildfire_detection/data/_annotations.coco.json"
+    image_dir = "/home/gaetansimplon/wildfire_detection/data"
     diagnostic = run_diagnostic(coco_json_path, image_dir)
         # Demande confirmation
     answer = input("\nSouhaites-tu lancer le nettoyage automatique ? (o/n) : ").strip().lower()
 
     if answer == "o":
-        output_json_path = "/home/getget/wildfire_detection/data/_annotations_clean.coco.json"
+        output_json_path = "/home/gaetansimplon/wildfire_detection/data/_annotations_clean.coco.json"
         clean_simple(coco_json_path, image_dir, output_json_path)
         print("Nettoyage terminé, fichier propre :", output_json_path)
     else:
