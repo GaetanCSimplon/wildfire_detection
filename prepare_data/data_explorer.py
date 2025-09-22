@@ -1,48 +1,27 @@
 import pandas as pd
-import numpy
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-## --- Partie Statistique --- ##
+def count_images(img_df: pd.DataFrame):
+    return len(img_df)
 
-# Résumé des données
-def dataset_summary(df):
-    # Sécurité : afficher les colonnes présentes
-    print("Colonnes disponibles :", df.columns.tolist())
+def count_ann(ann_df: pd.DataFrame):
+    return len(ann_df)
 
-    num_img = df['image_id'].nunique()
-    num_ann = len(df)
-    mean_ann = df.groupby('image_id').size().mean()
+def cat_list(cat_df: pd.DataFrame):
+    return cat_df['name'].tolist()
 
-    print(f"Nombre total d’images : {num_img}")
-    print(f"Nombre total d’annotations : {num_ann}")
-    print(f"Nombre moyen d’annotations par image : {mean_ann:.2f}")
+def img_per_cat(ann_df: pd.DataFrame):
+    grouped = ann_df[['image_id', 'category_id']].drop_duplicates().groupby('category_id').size().reset_index(name='nb_img')
+    return grouped
 
+def ann_stats_per_img(ann_df: pd.DataFrame):
+    return ann_df.groupby('image_id').size().describe()
 
-# Distribution des annotations par image
-def ann_per_img(df):
-    annotations_count = df.groupby('image_id').size()
-    print("Statistiques des annotations par image : ")
-    print(annotations_count.describe())
-    
+def avg_ann_per_img(ann_df: pd.DataFrame):
+    return ann_df.groupby('image_id')['id'].nunique().mean()
 
-    
-    
-## --- Partie Visualisation Graphique --- ##
+def stats_summary(img_df: pd.DataFrame, ann_df: pd.DataFrame):
+    img_count = print(f"Nombre d'images : {count_images(img_df)}")
+    ann_count = print(f"Nombre d'annotations : {count_images(ann_df)}")
+    ann_per_img = print(f"Nombre moyen d'annotations par image : {avg_ann_per_img(ann_df)}")
 
-
-def plot_ann_per_image(df):
-    # Compter le nombre d'annotations par image
-    ann_counts = df.groupby('image_id').size().reset_index(name='nb_ann')
-
-    # Tracer l'histogramme
-    plt.figure(figsize=(8,5))
-    sns.countplot(x='nb_ann', data=ann_counts, color='skyblue')
-
-    # Habillage
-    plt.title("Nombre d'images selon le nombre d'annotations")
-    plt.xlabel("Nombre d'annotations par image")
-    plt.ylabel("Nombre d'images")
-    plt.tight_layout()
-    plt.show()
-
+    return img_count, ann_count, ann_per_img
