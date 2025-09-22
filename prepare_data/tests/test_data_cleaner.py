@@ -1,6 +1,7 @@
 import pandas as pd
+import shutil
 from prepare_data.data_cleaner import (detect_invalid_bboxes, get_image_extensions,
-                                       check_image_annotation_coherence, clean_simple,
+                                       check_image_annotation_coherence,
                                        img_without_ann, annotations_without_images
                                        )
 
@@ -44,3 +45,28 @@ def test_annotations_without_images():
     ])
     orphaned = annotations_without_images(df_img, df_ann)
     assert len(orphaned) == 1
+    
+def test_check_img_ann_coherence(tmp_path):
+    
+    (tmp_path / "img1.jpg").touch()
+    (tmp_path / "img3.jpg").touch()
+    
+    df_img = pd.DataFrame([
+        {"id": "1", "file_name": "img1.jpg"},
+        {"id": "2", "file_name": "img2.jpg"},
+        
+    ])
+    
+    missing_in_folder, missing_in_coco = check_image_annotation_coherence(df_img, tmp_path)
+    assert missing_in_folder == {"img2.jpg"}
+    assert missing_in_coco == {"img3.jpg"}
+    
+def test_get_image_extensions(tmp_path):
+    # Création de faux fichiers
+    (tmp_path / "img1.jpg").touch()
+    (tmp_path / "img2.jpg").touch()
+    (tmp_path / "img3.png").touch()
+
+    extensions = get_image_extensions(tmp_path)
+
+    assert set(extensions) == {".jpg", ".png"}
