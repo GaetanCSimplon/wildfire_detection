@@ -1,5 +1,6 @@
 # dossier data
 data/
+data_split/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
