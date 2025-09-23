@@ -6,4 +6,4 @@ dataset = fo.Dataset.from_dir(
     labels_path='/home/gaetansimplon/wildfire_detection/data/_annotations_clean.coco.json'
 )
 
-session = fo.launch_app(dataset)
+session = fo.launch_app(dataset, port=5152)
