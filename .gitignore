@@ -6,6 +6,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# dossiers runs
+runs/
+runs_val/
+runs2/
+runs3/
+runs4/
+
 # C extensions
 *.so
 
