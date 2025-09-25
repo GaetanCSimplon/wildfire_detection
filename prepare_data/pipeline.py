@@ -54,7 +54,7 @@ if __name__ == "__main__":
     answer = input("\nSouhaites-tu lancer le nettoyage automatique ? (o/n) : ").strip().lower()
 
     if answer == "o":
-        output_json_path = "/home/gaetansimplon/wildfire_detection/data/_annotations_clean.coco.json"
+        output_json_path = "/home/fadilatou/PROJETS/wildfire_detection/data/_annotations_clean.coco.json"
         clean_simple(coco_json_path, image_dir, output_json_path)
         print("Nettoyage terminé, fichier propre :", output_json_path)
     else:

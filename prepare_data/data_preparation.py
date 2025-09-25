@@ -36,7 +36,7 @@ def prepare_data(coco_json, images_dir, output_dir):
 
     # Liste de tous les IDs d'images
     all_ids = list(id_to_file.keys())
-
+ 
     # -------------------------------
     # 1. Découpage train / val / test
     # -------------------------------
