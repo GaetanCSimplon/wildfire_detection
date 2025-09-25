@@ -1,9 +1,19 @@
 # dossier data
 data/
+data_split/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
+
+# dossiers runs
+runs/
+runs_val/
+runs2/
+runs3/
+runs4/
+runs5/
+runs6/
 
 # C extensions
 *.so
