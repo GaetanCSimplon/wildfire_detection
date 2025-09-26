@@ -15,7 +15,8 @@ pip install requirements.txt
  ┃ ┣ 📄 exploration.ipynb
  ┃ ┣ 📂 train_yolo
  ┃ ┣ 📄 model.ipynb
- ┃ ┗ 📄 yolo_get.ipynb
+ ┃ ┗ 📄 yolo_get.ipynb    -> Analyse résultats d'entrainement et visualisation (Gaëtan)
+ ┃ ┗ 📄 yolo_Version.ipynb -> Analyse résultats d'entrainement et visualisation (Fadilatou)
  ┣ 📄 data_cleaner.py     -> fonctions de nettoyage des données
  ┣ 📄 data_explorer.py    -> fonctions d'exploration des données
  ┣ 📄 data_loader.py      -> fonctions de chargement du dataset
