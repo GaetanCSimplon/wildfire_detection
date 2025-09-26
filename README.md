@@ -34,6 +34,8 @@ Modèle utilisé pour les premiers tests, les résultats sont partiellement acce
 
 Utilisé principalement par Fadilatou.
 
+Résultats consigné dans le dossier Run_results/ et analyse sur notebook Yolo_version.ipynb
+
 **Modèle YOLOv9c**
 
 Modèle sur lequel l'analyse a été faite selon 3 paramètrages différences.
