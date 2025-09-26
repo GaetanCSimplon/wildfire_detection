@@ -26,3 +26,20 @@ pip install requirements.txt
 📄 run_data_prep.py       -> pipeline de préparation des données pour le format yolo
 📄 requirements.txt
 
+# Travaux côté Gaëtan
+
+**Modèle YOLOv8n/s/m**
+
+Modèle utilisé pour les premiers tests, les résultats sont partiellement accessible dans le notebook yolo_get.ipynb dans les sous-parties Run 1, Run 2, Run 3.
+
+Utilisé principalement par Fadilatou.
+
+**Modèle YOLOv9c**
+
+Modèle sur lequel l'analyse a été faite selon 3 paramètrages différences.
+
+- Résultats sur le notebook yolo_get.ipynb (Run 4, 5, 6) et dans le dossier train_results_yolov9c
+
+**Modèle YOLOv11**
+
+Entrainé par Fadilatou.
