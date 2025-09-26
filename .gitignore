@@ -44,6 +44,11 @@ MANIFEST
 *.manifest
 *.spec
 
+# Dossier runs "résultats"
+.train_yoloV/
+
+
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
