@@ -7,7 +7,7 @@ pip install requirements.txt
 ```
 
 # Structure du projet
-
+```text
 📂 data                  -> contient le dataset
 📂 data_split            -> dataset divisé en train/validation/test
 📂 prepare_data
@@ -27,7 +27,7 @@ pip install requirements.txt
 📂 Run_results            -> contient les résultats d'entrainement (Fadila)
 📄 run_data_prep.py       -> pipeline de préparation des données pour le format yolo
 📄 requirements.txt
-
+```
 # Précisions
 
 **Modèle YOLOv8n/s/m**
