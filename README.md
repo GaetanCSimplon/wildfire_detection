@@ -13,6 +13,7 @@ pip install requirements.txt
 📂 prepare_data
  ┣ 📂 notebooks
  ┃ ┣ 📄 exploration.ipynb
+ ┃ ┣ 📂 train_yolo
  ┃ ┣ 📄 model.ipynb
  ┃ ┗ 📄 yolo_get.ipynb
  ┣ 📄 data_cleaner.py     -> fonctions de nettoyage des données
@@ -22,11 +23,12 @@ pip install requirements.txt
  ┣ 📄 pipeline.py
  ┣ 📄 main.py
  ┗ 📄 visualisation.py    -> visualisation via fiftyone
-📂 train_results          -> contient les csv des résultats d'entrainement (via google colab)
+📂 train_results          -> contient les csv des résultats d'entrainement (Gaëtan)
+📂 Run_results            -> contient les résultats d'entrainement (Fadila)
 📄 run_data_prep.py       -> pipeline de préparation des données pour le format yolo
 📄 requirements.txt
 
-# Travaux côté Gaëtan
+# Précisions
 
 **Modèle YOLOv8n/s/m**
 
